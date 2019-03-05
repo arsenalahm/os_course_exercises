@@ -23,6 +23,9 @@
 > 特权指令: 支持虚存，需要内存管理相关的特权指令，支持文件系统，需要I/O相关的特权指令，支持进程，需要中断相关的特权指令。
 
 - 你理解的x86的实模式和保护模式有什么区别？物理地址、线性地址、逻辑地址的含义分别是什么？
+- 你理解的x86的实模式和保护模式有什么区别？你认为从实模式切换到保护模式需要注意那些方面？
+
+- 物理地址、线性地址、逻辑地址的含义分别是什么？它们之间有什么联系？
 
 > 实模式和保护模式的区别: 可访问的物理内存空间大小不同，实模式下可访问的物理内存空间不超过1MB，在保护方式下，可寻址高达4G字节的物理地址空间。此外，实模式将整个物理内存看成分段的区域,程序代码和数据位于不同区域，系统程序和用户程序没有区别对待，而且每一个指针都是指向"实在"的物理地址。保护模式中，物理内存地址不能直接被程序访问，程序内部的地址（虚拟地址）要由操作系统转化为物理地址去访问，程序对此一无所知。
 
@@ -130,8 +133,17 @@ SETGATE(intr, 1,2,3,0);
 > 如MOOC中给出的例子，访问数据结构中的数据，并且进行数据结构类型的转换
 
 #### reference
+
+## 问答题
+
+#### 在配置实验环境时，你遇到了那些问题，是如何解决的。
+
+## 参考资料
  - [Intel格式和AT&T格式汇编区别](http://www.cnblogs.com/hdk1993/p/4820353.html)
  - [x86汇编指令集  ](http://hiyyp1234.blog.163.com/blog/static/67786373200981811422948/)
  - [PC Assembly Language, Paul A. Carter, November 2003.](https://pdos.csail.mit.edu/6.828/2016/readings/pcasm-book.pdf)
  - [*Intel 80386 Programmer's Reference Manual*, 1987](https://pdos.csail.mit.edu/6.828/2016/readings/i386/toc.htm)
  - [IA-32 Intel Architecture Software Developer's Manuals](http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html)
+ - [v9 cpu architecture](https://github.com/chyyuu/os_tutorial_lab/blob/master/v9_computer/docs/v9_computer.md)
+ - [RISC-V cpu architecture](http://www.riscvbook.com/chinese/)
+ - [OS相关经典论文](https://github.com/chyyuu/aos_course_info/blob/master/readinglist.md)
